@@ -38,16 +38,16 @@ class Solution:
         half = total // 2
 
         if len(B) < len(A):
-            A,B = A,B
+            A,B = B,A
 
         l,r= 0, len(A) - 1
         while True:
             i = (l+r) // 2    
             j = half - i -2 
-            Aleft = A[I] if i >= 0 else float("-infinity") 
+            Aleft = A[i] if i >= 0 else float("-infinity") 
             Aright = A[i+1] if (i +1) < len(A) else float("infinity") 
-            Bleft = B[J] if j >= 0 else float("-infinity")
-            Bright = B[J+1] if (j+1) < len(B) else float("infinity")
+            Bleft = B[j] if j >= 0 else float("-infinity")
+            Bright = B[j+1] if (j+1) < len(B) else float("infinity")
 
             # partition is correct 
             if Aleft <= Bright and Bleft <= Aright:
